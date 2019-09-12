@@ -35,5 +35,6 @@ export default {
 	light2: "#AFB3B4",
 	snow: "#F4F4F5",
 	slateGray: "#708090",
-	darkslategray: "#2F4F4F"
+	darkslategray: "#2F4F4F",
+	orange: "#FFBF00"
 };

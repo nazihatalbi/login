@@ -3,7 +3,7 @@ import { Text, View, Button, ImageBackground } from "react-native";
 
 import Image from "../images/splash.png";
 
-class Splash extends Component {
+export default class Splash extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -24,5 +24,3 @@ class Splash extends Component {
 		);
 	}
 }
-
-export default Splash;

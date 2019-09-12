@@ -14,31 +14,29 @@ export default class SignIn extends Component {
 		this.state = {
 			email: "nazihatalbi@gmail.com",
 			password: "123456",
-			mailvalidation: true,
-			passwordvalidation: true,
-			emailInput: null,
-			passwordInput: null
+			mailvalidation: false,
+			passwordvalidation: false,
+			emailInput: "",
+			passwordInput: ""
 		};
 	}
 
-	validatEmail = value => {
+	validatEmail = emailInput => {
 		this.setState({
-			emailInput: value
+			emailInput,
+			mailvalidation: EMAIL_REGEX.test(emailInput.trim())
 		});
 	};
 
-	validatepassword = value => {
+	validatepassword = passwordInput => {
 		this.setState({
-			passwordInput: value
+			passwordInput,
+			passwordvalidation: passwordInput.length >= 6
 		});
 	};
 
 	handleLogin = ({ email = this.state.emailInput, password = this.state.passwordInput }) => {
-		if (!EMAIL_REGEX.test(email)) {
-			this.setState({ mailvalidation: false });
-		} else if (password.trim().length < 6) {
-			this.setState({ passwordvalidation: false });
-		} else if (email.trim() === this.state.email && this.state.password === password.trim()) {
+		if (email.trim() === this.state.email && this.state.password === password.trim()) {
 			this.props.navigation.replace("Home");
 		}
 	};
@@ -59,7 +57,12 @@ export default class SignIn extends Component {
 					placeholder="password"
 					onChangeText={this.validatepassword}
 				/>
-				<Button full={true} style={Styles.button} onPress={this.handleLogin}>
+				<Button
+					full={true}
+					style={Styles.button}
+					onPress={this.handleLogin}
+					disabled={!this.state.mailvalidation || !this.state.passwordvalidation}
+				>
 					<Text style={Styles.text}>Se Connecter</Text>
 				</Button>
 			</View>

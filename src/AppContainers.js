@@ -7,7 +7,7 @@ class AppContainer extends React.PureComponent {
 	render() {
 		return (
 			<SafeAreaView style={styles.container}>
-				<StatusBar backgroundColor={colors.yellow2} barStyle="light-content" />
+				<StatusBar backgroundColor={colors.grey4} barStyle="light-content" />
 				<AppNavigation />
 			</SafeAreaView>
 		);

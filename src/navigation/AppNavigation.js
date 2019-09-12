@@ -2,6 +2,7 @@ import { createAppContainer, createStackNavigator } from "react-navigation";
 import Splash from "../containers/Splash";
 import SignIn from "../containers/SignIn";
 import Home from "../containers/Home";
+import { colors } from "../themes";
 
 const AppNavigator = createStackNavigator(
 	{
@@ -19,11 +20,20 @@ const AppNavigator = createStackNavigator(
 		},
 		Home: {
 			screen: Home,
-			navigationOptions: {}
+			navigationOptions: {
+				title: "Home",
+				headerStyle: {
+					backgroundColor: "#FFBF00"
+				},
+				headerTintColor: "#fff",
+				headerTitleStyle: {
+					fontWeight: "bold"
+				}
+			}
 		}
 	},
 	{
-		initialRouteName: "Splash",
+		initialRouteName: "Home",
 		navigationOptions: {
 			headerStyle: {
 				elevation: 0,
