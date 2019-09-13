@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Text, View, FlatList, StyleSheet, AppRegistry, Image, ActivityIndicator } from "react-native";
-import { colors, metrics, fonts } from "../themes";
+import { colors, metrics, fonts } from "../../themes";
 
-import Items from "../components/Item";
+import Items from "../../components/Item";
 
 export default class Item extends Component {
 	constructor() {
@@ -22,7 +22,7 @@ export default class Item extends Component {
 	};
 
 	componentDidMount() {
-		fetch("https://jsonplaceholder.typicode.com/todos")
+		fetch("https://jsonplaceholder.typicode.com/users")
 			.then(function(response) {
 				return response.json();
 			})
@@ -40,7 +40,7 @@ export default class Item extends Component {
 			</View>
 		) : (
 			<View>
-				<Text style={{ textAlign: "center", fontSize: 18 }}>TODO LIST</Text>
+				<Text style={{ textAlign: "center", fontSize: 18 }}>USERS LIST</Text>
 				<FlatList style={{ backgroundColor: colors.grey2 }} data={this.state.datasource} renderItem={this.renderItem} />
 			</View>
 		);

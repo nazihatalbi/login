@@ -1,7 +1,8 @@
 import { createAppContainer, createStackNavigator } from "react-navigation";
 import Splash from "../containers/Splash";
 import SignIn from "../containers/SignIn";
-import Home from "../containers/Home";
+import Home from "../containers/home/Home";
+import TodoDetails from "../containers/home/TodoDetails";
 import { colors } from "../themes";
 
 const AppNavigator = createStackNavigator(
@@ -29,6 +30,12 @@ const AppNavigator = createStackNavigator(
 				headerTitleStyle: {
 					fontWeight: "bold"
 				}
+			}
+		},
+		TodoDetails: {
+			screen: TodoDetails,
+			navigationOptions: {
+				title: "user-details"
 			}
 		}
 	},
