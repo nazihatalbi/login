@@ -4,7 +4,6 @@ import { createAppContainer, createBottomTabNavigator } from "react-navigation";
 
 import Icon from "react-native-vector-icons/Octicons";
 import Setting from "react-native-vector-icons/AntDesign";
-import Contact from "react-native-vector-icons/AntDesign";
 
 import Home from "../containers/home/Home";
 import { colors } from "../themes";
@@ -33,19 +32,25 @@ const TabNavigator = createBottomTabNavigator(
 		Home: {
 			screen: Home,
 			navigationOptions: {
-				tabBarIcon: ({ tintColor }) => <Icon name="home" size={30} color={colors.orange} />
+				tabBarIcon: ({ tintColor, focused }) => (
+					<Icon name="home" size={30} color={focused ? colors.primary : colors.dimGray} />
+				)
 			}
 		},
 		Settings: {
 			screen: SettingsScreen,
 			navigationOptions: {
-				tabBarIcon: ({ tintColor }) => <Setting name="setting" size={30} color={colors.orange} />
+				tabBarIcon: ({ tintColor, focused }) => (
+					<Setting name="setting" size={30} color={focused ? colors.primary : colors.dimGray} />
+				)
 			}
 		},
 		Contacts: {
 			screen: ContactsScreen,
 			navigationOptions: {
-				tabBarIcon: ({ tintColor }) => <Setting name="contacts" size={30} color={colors.orange} />
+				tabBarIcon: ({ tintColor, focused }) => (
+					<Setting name="contacts" size={30} color={focused ? colors.primary : colors.dimGray} />
+				)
 			}
 		}
 	},
