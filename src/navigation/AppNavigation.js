@@ -1,9 +1,8 @@
 import { createAppContainer, createStackNavigator } from "react-navigation";
 import Splash from "../containers/Splash";
 import SignIn from "../containers/SignIn";
-import Home from "../containers/home/Home";
 import TodoDetails from "../containers/home/TodoDetails";
-import { colors } from "../themes";
+import TabNavigator from "./TabNavigation";
 
 const AppNavigator = createStackNavigator(
 	{
@@ -20,7 +19,7 @@ const AppNavigator = createStackNavigator(
 			}
 		},
 		Home: {
-			screen: Home,
+			screen: TabNavigator,
 			navigationOptions: {
 				title: "Home",
 				headerStyle: {
@@ -35,7 +34,14 @@ const AppNavigator = createStackNavigator(
 		TodoDetails: {
 			screen: TodoDetails,
 			navigationOptions: {
-				title: "user-details"
+				title: "user-details",
+				headerStyle: {
+					backgroundColor: "#FFBF00"
+				},
+				headerTintColor: "#fff",
+				headerTitleStyle: {
+					fontWeight: "bold"
+				}
 			}
 		}
 	},

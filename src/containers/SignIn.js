@@ -37,7 +37,7 @@ export default class SignIn extends Component {
 
 	handleLogin = ({ email = this.state.emailInput, password = this.state.passwordInput }) => {
 		if (email.trim() === this.state.email && this.state.password === password.trim()) {
-			this.props.navigation.replace("Home");
+			this.props.navigation.replace("TabNavigation");
 		}
 	};
 

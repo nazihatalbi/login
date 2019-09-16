@@ -4,7 +4,6 @@ import { withNavigation } from "react-navigation";
 
 import todo from "../images/todo.jpg";
 import { metrics, colors } from "../themes";
-import Item from "../containers/home/Home";
 
 class Items extends Component {
 	handlePress = () => {
