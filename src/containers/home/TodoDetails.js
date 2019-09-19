@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Text, View, Image, StyleSheet } from "react-native";
 
 import details from "../../images/adress.png";
-import { colors } from "../../themes";
 
 export class TodoDetails extends Component {
 	state = {
